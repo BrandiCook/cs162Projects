@@ -44,4 +44,4 @@ p4 = Person("Marta", 24)
 person_list = [p1, p2, p3, p4]
 # basic_stats(person_list)
 print(basic_stats(person_list))  # should print a tuple of three values
-""" 
+"""
