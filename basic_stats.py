@@ -32,7 +32,7 @@ def basic_stats(l):
     for i in range(0, len(l)):
         print(l[i].get_name() + " " + str(l[i].get_age()))
         ages.append(l[i].get_age())
-    return [statistics.mean(ages), statistics.median(ages), statistics.mode(ages)]
+    return (statistics.mean(ages), statistics.median(ages), statistics.mode(ages))
 
 
 """
