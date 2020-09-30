@@ -1,3 +1,8 @@
+# Author: Brandi Cook
+# Date: 9/27/2020
+# Description: This program finds the mean median and mode of given ages of people
+
+import statistics
 
 class Person:
     """
@@ -20,6 +25,24 @@ class Person:
         """Returns the age of the Person"""
         return self._age
 
+
+def basic_stats(l):
     """
-    GITHUB TEST
+    :param l: Tuple/Array of Persons
+    :return: Tuple of stats
     """
+    ages = []
+    for i in range(0, len(l)):
+        print(l[i].get_name() + " " + str(l[i].get_age()))
+        ages.append(l[i].get_age())
+    return [statistics.mean(ages), statistics.median(ages), statistics.mode(ages)]
+
+
+p1 = Person("Kyoungmin", 73)
+p2 = Person("Mercedes", 24)
+p3 = Person("Avanika", 48)
+p4 = Person("Marta", 24)
+
+person_list = [p1, p2, p3, p4]
+#basic_stats(person_list)
+print(basic_stats(person_list))  # should print a tuple of three values
