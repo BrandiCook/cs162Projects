@@ -4,6 +4,7 @@
 
 import statistics
 
+
 class Person:
     """
     Represents a person. Contains methods for
@@ -34,11 +35,13 @@ def basic_stats(l):
     return [statistics.mean(ages), statistics.median(ages), statistics.mode(ages)]
 
 
+"""
 p1 = Person("Kyoungmin", 73)
 p2 = Person("Mercedes", 24)
 p3 = Person("Avanika", 48)
 p4 = Person("Marta", 24)
 
 person_list = [p1, p2, p3, p4]
-#basic_stats(person_list)
+# basic_stats(person_list)
 print(basic_stats(person_list))  # should print a tuple of three values
+""" 
