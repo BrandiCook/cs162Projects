@@ -27,10 +27,6 @@ class Person:
 
 
 def basic_stats(l):
-    """
-    :param l: Tuple/Array of Persons
-    :return: Tuple of stats
-    """
     ages = []
     for i in range(0, len(l)):
         print(l[i].get_name() + " " + str(l[i].get_age()))
