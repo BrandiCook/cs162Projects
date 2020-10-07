@@ -1,3 +1,9 @@
+# Author: Brandi Cook
+# Date: 10/5/2020
+# Description: This program is to test a simulated store, named Store.py
+# Store.py has members, grocery items, and keeps track of items in cart as
+# well as price. StoreTester.py ensures functions and classes are working properly. 
+
 import unittest
 import uuid
 
@@ -6,8 +12,14 @@ from cs162project2.Store import Customer
 from cs162project2.Store import Store
 
 class ProductTest(unittest.TestCase):
+    """
+    This is a class made in order to test the Product class from Store.py
+    """
 
     def setUp(self):
+        """
+        Creates example/test specifications for the product
+        """
         self.product_id = uuid.getnode()
         self.product_title = "Test Title"
         self.product_desc = "Test Description"
@@ -17,18 +29,30 @@ class ProductTest(unittest.TestCase):
                                self.product_price, self.product_quant)
 
     def test_get_product_id(self):
+        """
+        Tests whether or not Store.py successfully gets product id
+        """
         self.assertEqual(self.product_id, self.product.get_id_code())
 
     def test_get_product_title(self):
+        """
+        Tests whether or not Store.py successfully gets product title
+        """
         self.assertEqual(self.product_title, self.product.get_title())
 
     def test_decrement_quantity(self):
+        """
+        Tests whether or not Store.py successfully decrements quantity available
+        """
         self.assertEqual(self.product.get_quantity_available(), 1)
 
 
 class CustomerTest(unittest.TestCase):
+    """
+    This is a class made in order to test the Customer class from Store.py
+    """
     def setUp(self):
-        #note*** UUID is universal unique id***
+        #note to self *** UUID is universal unique id***
         self.customer_id = uuid.uuid1()
         self.customer_name = "Billy Bob"
         self.customer_premium = True
