@@ -2,7 +2,7 @@
 # Date: 10/5/2020
 # Description: This program is to test a simulated store, named Store.py
 # Store.py has members, grocery items, and keeps track of items in cart as
-# well as price. StoreTester.py ensures functions and classes are working properly. 
+# well as price. StoreTester.py ensures functions and classes are working properly.
 
 import unittest
 import uuid
@@ -52,6 +52,9 @@ class CustomerTest(unittest.TestCase):
     This is a class made in order to test the Customer class from Store.py
     """
     def setUp(self):
+        """
+        Sets up test specifications for a customer object
+        """
         #note to self *** UUID is universal unique id***
         self.customer_id = uuid.uuid1()
         self.customer_name = "Billy Bob"
@@ -67,13 +70,20 @@ class CustomerTest(unittest.TestCase):
         self.customer2 = Customer(self.customer2_name, self.customer2_id, self.customer2_premium)
 
     def test_is_premium_member(self):
+        """
+        Checks whether or not the premium member checker
+        from Store.py works correctly
+        """
         self.assertTrue(self.customer1.is_premium_member())
         self.assertFalse(self.customer2.is_premium_member())
 
 class StoreTest(unittest.TestCase):
+    """
+
+    """
     def setUp(self):
         self.first_member = Customer("John Doe", uuid.uuid1(), True)
-        self.second_member = Customer("Mike Hawk", uuid.uuid1(), False)
+        self.second_member = Customer("Tony Hawk", uuid.uuid1(), False)
         self.store = Store()
         self.inventory = dict()
         self.members = dict()
