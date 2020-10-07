@@ -79,9 +79,12 @@ class CustomerTest(unittest.TestCase):
 
 class StoreTest(unittest.TestCase):
     """
-
+    This is a class made in order to test the Store class from Store.py
     """
     def setUp(self):
+        """
+        Sets up test specifications for a Store
+        """
         self.first_member = Customer("John Doe", uuid.uuid1(), True)
         self.second_member = Customer("Tony Hawk", uuid.uuid1(), False)
         self.store = Store()
@@ -89,6 +92,10 @@ class StoreTest(unittest.TestCase):
         self.members = dict()
 
     def test_add_member(self):
+        """
+        Tests whether or not the member adding function from Store.py
+        functions correctly
+        """
         self.store = Store()
         self.store.add_member(self.first_member)
         self.assertIsNotNone(self.store.get_member_from_id(self.first_member.get_account_ID()))
